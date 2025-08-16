@@ -1,0 +1,16 @@
+[
+  {
+    "name": "iLovePDF",
+    "link": "https://www.ilovepdf.com/",
+    "description": "All-in-one PDF editor and converter.",
+    "logo": "logos/ilovepdf.png",
+    "category": "pdf"
+  },
+  {
+    "name": "Canva",
+    "link": "https://www.canva.com/",
+    "description": "Easy design and image editing.",
+    "logo": "logos/canva.png",
+    "category": "design"
+  }
+]

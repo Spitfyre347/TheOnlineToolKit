@@ -1,82 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Online Toolkit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Online Tool Kit</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
-    header { background: #222; color: #fff; padding: 1rem; text-align: center; }
-    h1 { margin: 0; }
-    .container { max-width: 900px; margin: auto; padding: 1rem; }
-    .search-box { width: 100%; padding: 0.5rem; margin: 1rem 0; border: 1px solid #ccc; border-radius: 5px; }
-    .category { margin: 2rem 0; }
-    .category h2 { border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
-    .tool-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
-    .tool-card { background: #fff; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .tool-card a { text-decoration: none; color: #0073e6; font-weight: bold; }
-    .tool-card p { margin: 0.5rem 0 0; color: #555; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+    }
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .sidebar ul li {
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .sidebar ul li:hover {
+      background-color: #34495e;
+    }
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      padding: 20px;
+      flex-grow: 1;
+    }
+    .search-box {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .search-box input {
+      width: 60%;
+      padding: 15px;
+      font-size: 16px;
+      border: 2px solid #2c3e50;
+      border-radius: 8px;
+    }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .tool-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      background: #f9f9f9;
+      transition: transform 0.2s;
+    }
+    .tool-card:hover {
+      transform: scale(1.05);
+      background: #eef;
+    }
+    .tool-card a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>🧰 The Online Toolkit</h1>
-    <p>Your hub for free online tools</p>
-  </header>
+  <div class="sidebar">
+    <h2>🪚 All Tools</h2>
+    <ul>
+      <li onclick="showCategory('home')">🏠 Home</li>
+      <li onclick="showCategory('pdf')">📄 Document Editors</li>
+      <li onclick="showCategory('convert')">🔄 File Converters</li>
+      <li onclick="showCategory('design')">🎨 Design Software</li>
+      <li onclick="showCategory('study')">📚 Studying Tools</li>
+      <li onclick="showCategory('price')">💰 Price Comparisons</li>
+      <li onclick="showCategory('math')">🧮 Mathematics Tools</li>
+      <li onclick="showCategory('write')">✒️ Writing Tools</li>
+      <li onclick="showCategory('code')">🖥️ Development Tools</li>
+      <li onclick="showCategory('travel')">✈️ Travel Tools</li>
+      <li onclick="showCategory('code')">💼 Business Tools</li>
+      <li onclick="showCategory('code')">📧 Mail Tools</li>
+    </ul>
+  </div>
 
-  <div class="container">
-    <input type="text" class="search-box" placeholder="Search tools..." onkeyup="searchTools()" />
-
-    <div class="category">
-      <h2>📄 PDF & Document Tools</h2>
-      <div class="tool-list">
-        <div class="tool-card">
-          <a href="https://www.ilovepdf.com/" target="_blank">ILovePDF</a>
-          <p>Merge, split, compress, and edit PDFs.</p>
-        </div>
-        <div class="tool-card">
-          <a href="https://www.smallpdf.com/" target="_blank">SmallPDF</a>
-          <p>Easy online PDF tools.</p>
-        </div>
+  <div class="main" id="main-content">
+    <!-- Home Page -->
+    <div id="home" class="category">
+      <h1>The Online Tool Kit 🧰</h1>
+      <h2> Your hub for free online tools! </p>
+      <div class="search-box">
+        <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
+      </div>
+      <h3>Featured Tools</h2>
+      <div class="tools-grid" id="tool-list">
+        <div class="tool-card"><a href="https://www.ilovepdf.com/" target="_blank">iLovePDF</a></div>
+        <div class="tool-card"><a href="https://smallpdf.com/" target="_blank">SmallPDF</a></div>
+        <div class="tool-card"><a href="https://convertio.co/" target="_blank">Convertio</a></div>
+        <div class="tool-card"><a href="https://www.canva.com/" target="_blank">Canva</a></div>
+        <div class="tool-card"><a href="https://quizlet.com/" target="_blank">Quizlet</a></div>
       </div>
     </div>
 
-    <div class="category">
-      <h2>☁️ File Conversion</h2>
-      <div class="tool-list">
-        <div class="tool-card">
-          <a href="https://cloudconvert.com/" target="_blank">CloudConvert</a>
-          <p>Convert files between 200+ formats.</p>
-        </div>
-        <div class="tool-card">
-          <a href="https://convertio.co/" target="_blank">Convertio</a>
-          <p>Online converter for documents, images, audio, and more.</p>
-        </div>
+    <!-- PDF Tools -->
+    <div id="pdf" class="category" style="display:none;">
+      <h1>PDF & Document Tools</h1>
+      <div class="tools-grid">
+        <div class="tool-card"><a href="https://www.ilovepdf.com/" target="_blank">iLovePDF</a></div>
+        <div class="tool-card"><a href="https://smallpdf.com/" target="_blank">SmallPDF</a></div>
       </div>
     </div>
 
-    <div class="category">
-      <h2>🖼️ Design & Images</h2>
-      <div class="tool-list">
-        <div class="tool-card">
-          <a href="https://www.canva.com/" target="_blank">Canva</a>
-          <p>Free design and templates.</p>
-        </div>
-        <div class="tool-card">
-          <a href="https://remove.bg/" target="_blank">Remove.bg</a>
-          <p>Remove image backgrounds instantly.</p>
-        </div>
+    <!-- File Converters -->
+    <div id="convert" class="category" style="display:none;">
+      <h1>File Converters</h1>
+      <div class="tools-grid">
+        <div class="tool-card"><a href="https://convertio.co/" target="_blank">Convertio</a></div>
+        <div class="tool-card"><a href="https://cloudconvert.com/" target="_blank">CloudConvert</a></div>
+      </div>
+    </div>
+
+    <!-- Design Tools -->
+    <div id="design" class="category" style="display:none;">
+      <h1>Design & Image Editors</h1>
+      <div class="tools-grid">
+        <div class="tool-card"><a href="https://www.canva.com/" target="_blank">Canva</a></div>
+        <div class="tool-card"><a href="https://pixlr.com/" target="_blank">Pixlr</a></div>
+      </div>
+    </div>
+
+    <!-- Study Tools -->
+    <div id="study" class="category" style="display:none;">
+      <h1>Studying Tools</h1>
+      <div class="tools-grid">
+        <div class="tool-card"><a href="https://quizlet.com/" target="_blank">Quizlet</a></div>
+        <div class="tool-card"><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></div>
       </div>
     </div>
   </div>
 
   <script>
+    function showCategory(category) {
+      let sections = document.querySelectorAll('.category');
+      sections.forEach(sec => sec.style.display = 'none');
+      document.getElementById(category).style.display = 'block';
+    }
+
     function searchTools() {
-      let input = document.querySelector('.search-box').value.toLowerCase();
-      let cards = document.querySelectorAll('.tool-card');
-      cards.forEach(card => {
-        let text = card.innerText.toLowerCase();
-        card.style.display = text.includes(input) ? "block" : "none";
+      let input = document.getElementById('searchBar').value.toLowerCase();
+      let tools = document.querySelectorAll('#tool-list .tool-card');
+      tools.forEach(tool => {
+        let text = tool.innerText.toLowerCase();
+        tool.style.display = text.includes(input) ? 'block' : 'none';
       });
     }
   </script>
