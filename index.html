@@ -10,6 +10,18 @@
       font-family: Arial, sans-serif;
       display: flex;
     }
+    h1 {
+      font-size: 45px;
+      color: #151d25;
+    }
+    h2 {
+      font-size: 30px;
+      color: #151d25;
+    }
+    p {
+      color: #6e7881;
+      font-size: 20px;
+    }
     /* Sidebar */
     .sidebar {
       width: 250px;
@@ -60,6 +72,9 @@
       gap: 20px;
     }
     .tool-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centers both image and text */
       border: 1px solid #ddd;
       padding: 20px;
       border-radius: 10px;
@@ -72,18 +87,52 @@
       background: #eef;
     }
     .tool-card a {
+      display: block;  /* makes it appear below the image */
+      margin-top: 10px; /* optional spacing */
       text-decoration: none;
-      color: #2c3e50;
+      color: #105ef0;
       font-weight: bold;
+      font-size: 25px; /* change the size here */
     }
+    .tool-card p {
+      font-size: 17px; /* change the size here */
+    }
+    .tool-card img {
+      margin-top: 8px; /* adjust as needed */
+    }
+    .search-mode .tools-grid .tool-card {
+      opacity: 0.3;          /* dim all tool cards */
+      transition: opacity 0.3s;
+    }
+
+    .search-mode .tools-grid .tool-card.show {
+      opacity: 1;            /* highlight matching cards */
+    }
+
+    #featured-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+      gap: 20px;
+      justify-content: center; /* centers the grid */
+    }
+
+    #search-results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+      gap: 20px;
+      justify-content: center; /* centers the grid */
+    }
+
+
+
   </style>
 </head>
 <body>
   <div class="sidebar">
-    <h2>🪚 All Tools</h2>
+    <h2 style="color: #eef; font-size: 25px;">🪚 All Tools</h2>
     <ul>
       <li onclick="showCategory('home')">🏠 Home</li>
-      <li onclick="showCategory('pdf')">📄 Document Editors</li>
+      <li onclick="showCategory('doc')">📄 Document Editors</li>
       <li onclick="showCategory('convert')">🔄 File Converters</li>
       <li onclick="showCategory('design')">🎨 Design Software</li>
       <li onclick="showCategory('study')">📚 Studying Tools</li>
@@ -92,81 +141,257 @@
       <li onclick="showCategory('write')">✒️ Writing Tools</li>
       <li onclick="showCategory('code')">🖥️ Development Tools</li>
       <li onclick="showCategory('travel')">✈️ Travel Tools</li>
-      <li onclick="showCategory('code')">💼 Business Tools</li>
-      <li onclick="showCategory('code')">📧 Mail Tools</li>
+      <li onclick="showCategory('business')">💼 Business Tools</li>
+      <li onclick="showCategory('mail')">📧 Mail Tools</li>
+      <li onclick="showCategory('lock')">🔐 Online Safety Tools</li>
     </ul>
   </div>
 
-  <div class="main" id="main-content">
+  <div class="main" id="main-content" style="text-align:center;">
     <!-- Home Page -->
     <div id="home" class="category">
       <h1>The Online Tool Kit 🧰</h1>
-      <h2> Your hub for free online tools! </p>
-      <div class="search-box">
+      <p style="margin-bottom: 50px;"> Your hub for free online tools! </p>
+      <div class="search-box", style="margin-bottom: 70px;">
         <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
       </div>
-      <h3>Featured Tools</h2>
-      <div class="tools-grid" id="tool-list">
-        <div class="tool-card"><a href="https://www.ilovepdf.com/" target="_blank">iLovePDF</a></div>
-        <div class="tool-card"><a href="https://smallpdf.com/" target="_blank">SmallPDF</a></div>
-        <div class="tool-card"><a href="https://convertio.co/" target="_blank">Convertio</a></div>
-        <div class="tool-card"><a href="https://www.canva.com/" target="_blank">Canva</a></div>
-        <div class="tool-card"><a href="https://quizlet.com/" target="_blank">Quizlet</a></div>
+      <div id="featured-section">
+        <h2 style="margin-top: 50px;">Featured Tools</h2>
+        <div class="tools-grid" id="featured-tools"></div>
       </div>
     </div>
 
+    <!-- Add a container for search results just below the search box -->
+    <div class="search-results" id="search-results" style="display:none; text-align:center;">
+      <h2>Search Results 🔍</h2>
+      <div class="tools-grid" id="search-results-grid"></div>
+    </div>
+
+
     <!-- PDF Tools -->
-    <div id="pdf" class="category" style="display:none;">
-      <h1>PDF & Document Tools</h1>
-      <div class="tools-grid">
-        <div class="tool-card"><a href="https://www.ilovepdf.com/" target="_blank">iLovePDF</a></div>
-        <div class="tool-card"><a href="https://smallpdf.com/" target="_blank">SmallPDF</a></div>
-      </div>
+    <div id="doc" class="category" style="display:none; text-align:center;">
+      <h1>Document Editors and PDF Tools 📄</h1>
+      <p style="margin-bottom: 30px;"> Edit document files entirely online without downloading any software!
+      </p>
+    </div>
+
+    <!-- Business Tools -->
+    <div id="business" class="category" style="display:none; text-align:center;">
+      <h1>Business and Trading Tools 💼</h1>
+      <p style="margin-bottom: 30px;"> Search trading databases and find tools made for businesses and financiers!
+      </p>
     </div>
 
     <!-- File Converters -->
-    <div id="convert" class="category" style="display:none;">
-      <h1>File Converters</h1>
-      <div class="tools-grid">
-        <div class="tool-card"><a href="https://convertio.co/" target="_blank">Convertio</a></div>
-        <div class="tool-card"><a href="https://cloudconvert.com/" target="_blank">CloudConvert</a></div>
-      </div>
+    <div id="convert" class="category" style="display:none; text-align:center;">
+      <h1>File Converters 🔄</h1>
+      <p style="margin-bottom: 30px;">Convert files between formats quickly and securely without installing software.</p>
     </div>
 
-    <!-- Design Tools -->
-    <div id="design" class="category" style="display:none;">
-      <h1>Design & Image Editors</h1>
-      <div class="tools-grid">
-        <div class="tool-card"><a href="https://www.canva.com/" target="_blank">Canva</a></div>
-        <div class="tool-card"><a href="https://pixlr.com/" target="_blank">Pixlr</a></div>
-      </div>
+    <!-- Design Software -->
+    <div id="design" class="category" style="display:none; text-align:center;">
+      <h1>Design Software 🎨</h1>
+      <p style="margin-bottom: 30px;">Create graphics, mockups, and designs online with powerful design tools.</p>
     </div>
 
-    <!-- Study Tools -->
-    <div id="study" class="category" style="display:none;">
-      <h1>Studying Tools</h1>
-      <div class="tools-grid">
-        <div class="tool-card"><a href="https://quizlet.com/" target="_blank">Quizlet</a></div>
-        <div class="tool-card"><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a></div>
-      </div>
+    <!-- Studying Tools -->
+    <div id="study" class="category" style="display:none; text-align:center;">
+      <h1>Studying Tools 📚</h1>
+      <p style="margin-bottom: 30px;">Boost your learning with online study aids, flashcards, and resources.</p>
     </div>
-  </div>
 
+    <!-- Price Comparisons -->
+    <div id="price" class="category" style="display:none; text-align:center;">
+      <h1>Price Comparison Tools 💰</h1>
+      <p style="margin-bottom: 30px;">Find the best deals online with tools that compare prices across websites.</p>
+    </div>
+
+    <!-- Mathematics Tools -->
+    <div id="math" class="category" style="display:none; text-align:center;">
+      <h1>Mathematics Tools 🧮</h1>
+      <p style="margin-bottom: 30px;">Solve equations, graph functions, and explore mathematical concepts online.</p>
+    </div>
+
+    <!-- Writing Tools -->
+    <div id="write" class="category" style="display:none; text-align:center;">
+      <h1>Writing Tools ✒️</h1>
+      <p style="margin-bottom: 30px;">Improve your writing, grammar, and creativity with online writing assistants.</p>
+    </div>
+
+    <!-- Development Tools -->
+    <div id="code" class="category" style="display:none; text-align:center;">
+      <h1>Development Tools 🖥️</h1>
+      <p style="margin-bottom: 30px;">Access online coding editors, compilers, and developer utilities.</p>
+    </div>
+
+    <!-- Travel Tools -->
+    <div id="travel" class="category" style="display:none; text-align:center;">
+      <h1>Travel Tools ✈️</h1>
+      <p style="margin-bottom: 30px;">Plan trips, check flights, and organize your travel online with ease.</p>
+    </div>
+
+    <!-- Mail Tools -->
+    <div id="mail" class="category" style="display:none; text-align:center;">
+      <h1>Mail Tools 📧</h1>
+      <p style="margin-bottom: 30px;">Manage email accounts, track messages, and improve productivity online.</p>
+    </div>
+
+    <!-- Online Safety Tools -->
+    <div id="lock" class="category" style="display:none; text-align:center;">
+      <h1>Online Safety Tools 🔐</h1>
+      <p style="margin-bottom: 30px;">Protect your data and browse safely with online security tools.</p>
+    </div>
+  
   <script>
-    function showCategory(category) {
-      let sections = document.querySelectorAll('.category');
-      sections.forEach(sec => sec.style.display = 'none');
-      document.getElementById(category).style.display = 'block';
-    }
+    let allTools = [];
 
-    function searchTools() {
-      let input = document.getElementById('searchBar').value.toLowerCase();
-      let tools = document.querySelectorAll('#tool-list .tool-card');
-      tools.forEach(tool => {
-        let text = tool.innerText.toLowerCase();
-        tool.style.display = text.includes(input) ? 'block' : 'none';
+    // Fetch tools from JSON
+    fetch('tools.json')
+      .then(response => response.json())
+      .then(data => {
+        allTools = data;
+        console.log('Tools loaded:', allTools);
+        renderFeatured();
+        renderAllCategories();
+      })
+      .catch(err => console.error('Error loading tools:', err));
+
+    // Render featured tools
+    function renderFeatured() {
+      const container = document.getElementById('featured-tools');
+      container.innerHTML = '';
+      allTools.filter(t => t.featured).forEach(tool => {
+        const card = document.createElement('div');
+        card.className = 'tool-card';
+        card.innerHTML = `
+          <img src="${tool.logo}" alt="${tool.name}" style="width:80px;height:80px;">
+          <a href="${tool.link}" target="_blank">${tool.name}</a>
+          <p>${tool.description}</p>
+        `;
+        container.appendChild(card);
       });
     }
-  </script>
+
+    function renderAllCategories() {
+      allTools.forEach(tool => {
+        // Split the categories string into an array
+        const categories = tool.category.split(',').map(cat => cat.trim());
+
+        categories.forEach(category => {
+          // Find the container with the ID matching the category
+          const container = document.getElementById(category);
+          if (!container) return; // Skip if no container exists
+
+          // Find the inner grid to put the tools in
+          let grid = container.querySelector('.tools-grid');
+          if (!grid) {
+            // If no grid exists, create one
+            grid = document.createElement('div');
+            grid.className = 'tools-grid';
+            container.appendChild(grid);
+          }
+
+          // Create the card for this tool
+          const card = document.createElement('div');
+          card.className = 'tool-card';
+          card.innerHTML = `
+            <img src="${tool.logo}" style="width:80px;height:80px;">
+            <a href="${tool.link}" target="_blank">${tool.name}</a>
+            <p>${tool.description}</p>
+          `;
+          grid.appendChild(card);
+        });
+      });
+    }
+
+
+    // Show selected category 
+    function showCategory(category) {
+      // Exit search mode
+      const mainContainer = document.getElementById('main-content');
+      mainContainer.classList.remove('search-mode');
+      document.getElementById('searchBar').value = ''; // clear search bar
+      document.getElementById('search-results').style.display = 'none'; // hide search results
+      document.getElementById('search-results-grid').innerHTML = '';
+
+      // Show the selected category
+      document.querySelectorAll('.category').forEach(sec => sec.style.display = 'none');
+      const el = document.getElementById(category);
+      if (el) el.style.display = 'block';
+
+      // Show featured section if going back to home
+      if (category === 'home') {
+        document.getElementById('featured-section').style.display = 'block';
+      }
+    }
+
+
+    function searchTools() {
+      const input = document.getElementById('searchBar').value.toLowerCase();
+      const mainContainer = document.getElementById('main-content');
+      const featuredContainer = document.getElementById('featured-tools');
+      const searchResultsContainer = document.getElementById('search-results');
+      const searchResultsGrid = document.getElementById('search-results-grid');
+
+      if (input.trim() === "") {
+        // Exit search mode
+        mainContainer.classList.remove('search-mode');
+        document.getElementById('featured-section').style.display = 'block'; // show featured
+        searchResultsContainer.style.display = 'none';
+        searchResultsGrid.innerHTML = '';
+        return;
+      }
+
+      // Enter search mode
+      mainContainer.classList.add('search-mode');
+      document.getElementById('featured-section').style.display = 'none'; // hide featured
+      searchResultsContainer.style.display = 'block';
+      searchResultsGrid.innerHTML = '';
+
+      let matches = allTools.filter(tool =>
+        tool.name.toLowerCase().includes(input) || tool.description.toLowerCase().includes(input)
+      );
+
+      matches.forEach(tool => {
+        const card = document.createElement('div');
+        card.className = 'tool-card show';
+        card.innerHTML = `
+          <img src="${tool.logo}" style="width:80px;height:80px;">
+          <a href="${tool.link}" target="_blank">${tool.name}</a>
+          <p>${tool.description}</p>
+        `;
+        searchResultsGrid.appendChild(card);
+      });
+
+      if (matches.length === 0) {
+      // Hide the grid
+      searchResultsGrid.style.display = 'none';
+
+      // Check if a "no results" message already exists
+      if (!document.getElementById('noResultsMessage')) {
+        const msg = document.createElement('div');
+        msg.id = 'noResultsMessage';
+        msg.style.textAlign = 'center';
+        msg.style.marginTop = '50px';
+        msg.innerHTML = "<p>No matching tools found :(</p>";
+        searchResultsContainer.appendChild(msg);
+      }
+    } else {
+      // Show the grid again
+      searchResultsGrid.style.display = 'grid';
+
+      // Remove any previous no-results message
+      const msg = document.getElementById('noResultsMessage');
+      if (msg) msg.remove();
+    }
+
+    }
+
+
+
+    // Initialize
+    renderFeatured();
+    renderAllCategories();
+    </script>
 </body>
 </html>
