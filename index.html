@@ -55,6 +55,14 @@
       padding: 20px;
       flex-grow: 1;
     }
+
+    /* On small screens, remove the left margin so content centers */
+    @media (max-width: 768px) {
+      .main {
+        margin-left: 0;
+      }
+    }
+
     .search-box {
       text-align: center;
       margin: 40px 0;
@@ -123,15 +131,60 @@
       justify-content: center; /* centers the grid */
     }
 
+    /* Sidebar base style */
+    .sidebar {
+      width: 250px;
+      background: #222;
+      color: #fff;
+      height: 100vh;
+      position: fixed;
+      z-index: 999;      /* add this so it sits on top */
+      top: 0;
+      left: 0;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+    }
 
+    /* Hide sidebar on mobile by default */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.active {
+        transform: translateX(0); /* slides it back in */
+      }
+
+      /* Push content over when sidebar is open */
+      body.sidebar-open {
+        overflow: hidden; /* prevents background scrolling */
+      }
+
+      /* Hamburger button */
+      .menu-toggle {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 20px;
+        border-radius: 5px;
+        z-index: 1000;
+      }
+    }
 
   </style>
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3457303641561581"
      crossorigin="anonymous"></script>
-     
+
 </head>
 <body>
+  
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
   <div class="sidebar">
     <h2 style="color: #eef; font-size: 25px;">🪚 All Tools</h2>
     <ul>
@@ -391,11 +444,15 @@
 
     }
 
-
-
     // Initialize
     renderFeatured();
     renderAllCategories();
+
+
+    function toggleSidebar() {
+      document.querySelector(".sidebar").classList.toggle("active");
+      document.body.classList.toggle("sidebar-open");
+    }
     </script>
 </body>
 </html>
