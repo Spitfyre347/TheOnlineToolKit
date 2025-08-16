@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Online Tool Kit</title>
-  <style>
+
+  <style>    
+
+    :root {
+      --main-font: 'Verdana', sans-serif;
+    }
+
+    body, h1, h2, h3, h4, h5, h6, p {
+      font-family: var(--main-font);
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
     }
     h1 {
       font-size: 45px;
@@ -49,18 +57,17 @@
     .sidebar ul li:hover {
       background-color: #34495e;
     }
-    /* Main content */
+
     .main {
-      margin-left: 250px;
+      margin: 0 auto;/* keeps content centered */
       padding: 20px;
-      flex-grow: 1;
+      max-width: 1200px;
+      transition: margin-left 0.3s ease;
     }
 
-    /* On small screens, remove the left margin so content centers */
-    @media (max-width: 768px) {
-      .main {
-        margin-left: 0;
-      }
+    /* When sidebar is active (open), push content over */
+    .sidebar.active ~ .main {
+      margin-left: 250px;
     }
 
     .search-box {
@@ -136,47 +143,42 @@
       width: 250px;
       background: #222;
       color: #fff;
-      height: 100vh;
+      height: auto;
       position: fixed;
       z-index: 999;      /* add this so it sits on top */
       top: 0;
       left: 0;
       overflow-y: auto;
       transition: transform 0.3s ease;
+      opacity: 0.95;
+      max-height: 90vh; /* full height */
+      padding-top: 50px;
+      padding-bottom: 20px;
+      transform: translateX(-100%);
     }
 
-    /* Hide sidebar on mobile by default */
-    @media (max-width: 768px) {
-      .sidebar {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        transform: translateX(-100%);
-        opacity: 0.95;
-      }
+    /* Hamburger button */
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background: #333333;
+      color: #fff;
+      opacity: 0.95;
+      border: none;
+      padding: 10px 15px;
+      font-size: 20px;
+      border-radius: 5px;
+      z-index: 1000;
+    }
 
-      .sidebar.active {
-        transform: translateX(0); /* slides it back in */
-      }
+    .sidebar.active {
+      transform: translateX(0); /* slides it back in */
+    }
 
-      /* Push content over when sidebar is open */
-      body.sidebar-open {
-        overflow: hidden; /* prevents background scrolling */
-      }
-
-      /* Hamburger button */
-      .menu-toggle {
-        position: fixed;
-        top: 15px;
-        left: 15px;
-        background: #333333;
-        color: #fff;
-        opacity: 0.95;
-        border: none;
-        padding: 10px 15px;
-        font-size: 20px;
-        border-radius: 5px;
-        z-index: 1000;
-      }
+    /* Push content over when sidebar is open */
+    body.sidebar-open {
+      overflow: hidden; /* prevents background scrolling */
     }
 
   </style>
@@ -190,7 +192,7 @@
   <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
 
   <div class="sidebar">
-    <h2 style="color: #eef; font-size: 25px;">🪚 All Tools</h2>
+    <h2 style="color: #eef; font-size: 25px; font-family: var(--main-font);">🪚 All Tools</h2>
     <ul>
       <li onclick="showCategory('home')">🏠 Home</li>
       <li onclick="showCategory('doc')">📄 Document Editors</li>
@@ -211,7 +213,7 @@
   <div class="main" id="main-content" style="text-align:center;">
     <!-- Home Page -->
     <div id="home" class="category">
-      <h1>The Online Tool Kit 🧰</h1>
+      <h1 style="margin-top: 60px;">The Online Tool Kit 🧰</h1>
       <p style="margin-bottom: 50px;"> Your hub for free online tools! </p>
       <div class="search-box", style="margin-bottom: 70px;">
         <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
