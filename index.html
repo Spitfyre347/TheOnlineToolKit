@@ -121,6 +121,13 @@
       justify-content: center; /* centers the grid */
     }
 
+    #category-tools {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+      gap: 20px;
+    }
+
+
     /* Sidebar base style */
     .sidebar {
       width: 250px;
@@ -364,6 +371,7 @@
             // If no grid exists, create one
             grid = document.createElement('div');
             grid.className = 'tools-grid';
+            grid.id = 'category-tools'
             container.appendChild(grid);
           }
 
