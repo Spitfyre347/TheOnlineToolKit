@@ -50,6 +50,7 @@
     .main {
       margin: 0 auto;/* keeps content centered */
       max-width: 1200px;
+      padding-left: 30px;
     }
 
     .search-box {
@@ -125,6 +126,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
       gap: 20px;
+      justify-content: center; /* centers the grid */
     }
 
 
@@ -150,6 +152,10 @@
       .sidebar {
         max-height: none;
         height: 100vh;
+      }
+
+      #category-tools {
+        justify-content: left;
       }
     }
 
@@ -179,12 +185,9 @@
       padding-right: var(--scrollbar-width);
     }
 
-
-
   </style>
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3457303641561581"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 <body>
@@ -215,32 +218,37 @@
     <div id="home" class="category">
       <h1 style="margin-top: 60px; font-size: 50px;">The Online Tool Kit 🧰</h1>
       <p style="margin-bottom: 50px;"> Your hub for free online tools! </p>
-      <div class="search-box", style="margin-bottom: 70px;">
+      <div class="search-box" style="margin-bottom: 70px;">
         <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
       </div>
+
+       <!-- Google AdSense test ad -->
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3940256099942544"
+          data-ad-slot="3145844922"
+          data-ad-format="auto"></ins>
+
+      
+      <!-- Push the ad -->
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+
       <div id="featured-section">
         <h2 style="margin-top: 50px;">Featured Tools</h2>
         <div class="tools-grid" id="featured-tools"></div>
       </div>
     </div>
 
+    
+
     <!-- Add a container for search results just below the search box -->
     <div class="search-results" id="search-results" style="display:none; text-align:center;">
       <h2>Search Results 🔍</h2>
       <div class="tools-grid" id="search-results-grid"></div>
     </div>
-
-    <!-- Google AdSense Ad Slot -->
-    <ins class="adsbygoogle"
-        style="display:block; text-align:center;"
-        data-ad-client="ca-pub-XXXXXXXXXXXX"
-        data-ad-slot="YYYYYYYYYY"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-
 
     <!-- PDF Tools -->
     <div id="doc" class="category" style="display:none; text-align:center;">
@@ -385,10 +393,9 @@
 
     //Show category
     function showCategory(category) {
-      // Exit search mode
       const mainContainer = document.getElementById('main-content');
       mainContainer.classList.remove('search-mode');
-      document.getElementById('searchBar').value = ''; // clear search bar
+      document.getElementById('searchBar').value = '';
       document.getElementById('search-results').style.display = 'none';
       document.getElementById('search-results-grid').innerHTML = '';
 
@@ -399,17 +406,13 @@
       const el = document.getElementById(category);
       if (el) el.style.display = 'block';
 
-      // Show featured section if home
       if (category === 'home') {
         document.getElementById('featured-section').style.display = 'block';
       }
 
-      // Close sidebar if open
-      const sidebar = document.querySelector(".sidebar");
-      if (sidebar.classList.contains("active")) {
-        sidebar.classList.remove("active");
-        document.body.style.paddingRight = '';
-        document.body.style.overflow = '';
+      // ✅ Auto-close sidebar on mobile
+      if (window.innerWidth < 768) {
+        toggleSidebar(true);
       }
     }
 
@@ -476,16 +479,27 @@
     renderAllCategories();
 
 
-    function toggleSidebar() {
+    function toggleSidebar(forceClose = false) {
       const body = document.body;
       const sidebar = document.querySelector(".sidebar");
+      const isMobile = window.innerWidth < 768;
+
+      if (forceClose) {
+        sidebar.classList.remove("active");
+        body.style.overflow = '';
+        body.style.paddingRight = '';
+        return;
+      }
 
       sidebar.classList.toggle("active");
-      if (sidebar.classList.contains("active")) {
+
+      if (sidebar.classList.contains("active") && isMobile) {
+        // mobile: prevent background scrolling
         const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
         body.style.paddingRight = scrollBarWidth + 'px';
         body.style.overflow = 'hidden';
       } else {
+        // desktop: don’t mess with scroll
         body.style.paddingRight = '';
         body.style.overflow = '';
       }

@@ -1,112 +1,242 @@
 [
-  {
-    "name": "iLovePDF",
-    "link": "https://www.ilovepdf.com/",
-    "description": "A suite of dozens of free PDF tools.",
-    "logo": "logos/ilovepdf.png",
-    "category": "doc",
-    "featured": true,
-    "use": "Free and no account required. Optional premium upgrades.",
-    "limits": "No usage limit. Some restrictions on file size."
-  },
-  {
-    "name": "PDF Candy",
-    "link": "https://pdfcandy.com/",
-    "description": "90+ Free Online PDF tools.",
-    "logo": "logos/pdfcandy.png",
-    "category": "doc",
-    "featured": true,
-    "use": "Free, but account required. Optional premium upgrades.",
-    "limits": "Hourly limit for free tier file processing."
-  },
-  {
-    "name": "CloudConvert",
-    "link": "https://cloudconvert.com/",
-    "description": "Convert between 200+ file formats.",
-    "logo": "logos/cloudconvert.png",
-    "category": "convert",
-    "featured": true,
-    "use": "Free and no account required. Optional premium upgrades.",
-    "limits": "Up to 10 conversions per day. More requires purchase."
-  },
-  {
-    "name": "Capitol Trades",
-    "link": "https://www.capitoltrades.com/",
-    "description": "See all trades made by US senators.",
-    "logo": "logos/capitoltrades.png",
-    "category": "business",
-    "featured": true,
-    "use": "Completely free to use, no account required.",
-    "limits": "No usage limit or restrictions."
-  },
-  {
-    "name": "FreeLearningList",
-    "link": "https://freelearninglist.org/",
-    "description": "A ranked list of the best free educational resources.",
-    "logo": "logos/freelearninglist.png",
-    "category": "study",
-    "featured": true,
-    "use": "Completely free to use, no account required.",
-    "limits": "No usage limit or restrictions."
-  },
-  {
-    "name": "FlowCV",
-    "link": "https://flowcv.com/",
-    "description": "Create a free professional resume online.",
-    "logo": "logos/flowcv.png",
-    "category": "business",
-    "featured": true,
-    "use": "Free, but account required. Optional premium upgrades.",
-    "limits": "First resume free, thereafter payment required."
-  },
-  {
-    "name": "QuillBot",
-    "link": "https://quillbot.com/",
-    "description": "Online text tools to paraphrase, check or summarize.",
-    "logo": "logos/quillbot.png",
-    "category": "write",
-    "featured": true,
-    "use": "Free and no account required. Optional premium upgrades.",
-    "limits": "No usage limit. Some features restricted."
-  },
-  {
-    "name": "Atlas Obscura",
-    "link": "https://www.atlasobscura.com/",
-    "description": "A guide to hidden travel gems.",
-    "logo": "logos/atlasobscura.png",
-    "category": "travel",
-    "featured": true,
-    "use": "Completely free to use, no account required.",
-    "limits": "No usage limit or restrictions."
-  },
-  {
-    "name": "TinyWOW",
-    "link": "https://tinywow.com/",
-    "description": "A collection of 272 useful online tools.",
-    "logo": "logos/tinywow.png",
-    "category": "doc",
-    "featured": true,
-    "use": "Completely free to use, no account required.",
-    "limits": "No usage limit or restrictions."
-  },
-  {
-    "name": "Ostagram",
-    "link": "https://www.ostagram.me/",
-    "description": "AI tool to create stylized images.",
-    "logo": "logos/ostagram.png",
-    "category": "design",
-    "featured": true,
-    "use": "Free to use, but account required.",
-    "limits": "No reported usage limit or restrictions."
-  },
-  {
-    "name": "LearnAnything",
-    "link": "https://learn-anything.xyz/",
-    "description": "Educational resources for hundreds of topics.",
-    "logo": "logos/learnanything.png",
-    "category": "code, math, writing",
-    "featured": true,
-    "use": "Completely free to use, no account required.",
-    "limits": "No usage limit or restrictions."
-  }
+    {
+        "name": "iLovePDF",
+        "link": "https://www.ilovepdf.com/",
+        "description": "A suite of dozens of free PDF tools.",
+        "logo": "logos/ilovepdf.png",
+        "category": "doc, convert, write",
+        "featured": true,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "No usage limit. Some restrictions on file size."
+    },
+    {
+        "name": "PDF Candy",
+        "link": "https://pdfcandy.com/",
+        "description": "90+ Free Online PDF tools.",
+        "logo": "logos/pdfcandy.png",
+        "category": "doc, convert, write",
+        "featured": false,
+        "use": "Free, but account required. Optional premium upgrades.",
+        "limits": "Hourly file processing limit for free tier."
+    },
+    {
+        "name": "CloudConvert",
+        "link": "https://cloudconvert.com/",
+        "description": "Convert between 200+ file formats.",
+        "logo": "logos/cloudconvert.png",
+        "category": "convert",
+        "featured": true,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "Up to 10 conversions per day. More requires purchase."
+    },
+    {
+        "name": "Capitol Trades",
+        "link": "https://www.capitoltrades.com/",
+        "description": "See all trades made by US senators.",
+        "logo": "logos/capitoltrades.png",
+        "category": "business",
+        "featured": true,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Free Learning List",
+        "link": "https://freelearninglist.org/",
+        "description": "A ranked list of the best free educational resources.",
+        "logo": "logos/freelearninglist.png",
+        "category": "study, math, write, code",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "FlowCV",
+        "link": "https://flowcv.com/",
+        "description": "Create a free professional resume online.",
+        "logo": "logos/flowcv.png",
+        "category": "business",
+        "featured": false,
+        "use": "Free, but account required. Optional premium upgrades.",
+        "limits": "First resume free, thereafter payment required."
+    },
+    {
+        "name": "QuillBot",
+        "link": "https://quillbot.com/",
+        "description": "Online text tools to paraphrase, check or summarize.",
+        "logo": "logos/quillbot.png",
+        "category": "write, study",
+        "featured": false,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "No usage limit. Some features restricted."
+    },
+    {
+        "name": "Atlas Obscura",
+        "link": "https://www.atlasobscura.com/",
+        "description": "A guide to hidden travel gems.",
+        "logo": "logos/atlasobscura.png",
+        "category": "travel",
+        "featured": true,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "TinyWOW",
+        "link": "https://tinywow.com/",
+        "description": "A collection of 272 useful online tools.",
+        "logo": "logos/tinywow.png",
+        "category": "doc, write, convert, design",
+        "featured": true,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Ostagram",
+        "link": "https://www.ostagram.me/",
+        "description": "AI tool to create stylized images.",
+        "logo": "logos/ostagram.png",
+        "category": "design",
+        "featured": false,
+        "use": "Free to use, but account required.",
+        "limits": "No reported usage limit or restrictions."
+    },
+    {
+        "name": "LearnAnything",
+        "link": "https://learn-anything.xyz/",
+        "description": "Educational resources for hundreds of topics.",
+        "logo": "logos/learnanything.png",
+        "category": "code, math, write, study",
+        "featured": true,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Side Hustle Stack",
+        "link": "https://sidehustlestack.co/",
+        "description": "An online database of earning opportunities.",
+        "logo": "logos/sidehustlestack.png",
+        "category": "business",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Camel Camel Camel",
+        "link": "https://camelcamelcamel.com/",
+        "description": "Amazon historical price tracker.",
+        "logo": "logos/camelcamelcamel.png",
+        "category": "price",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Spoken",
+        "link": "https://www.spoken.io/",
+        "description": "Interior design price comparer.",
+        "logo": "logos/spoken.png",
+        "category": "price",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Temp Mail",
+        "link": "https://temp-mail.org/",
+        "description": "Disposable, temporary email address creator.",
+        "logo": "logos/tempmail.png",
+        "category": "mail",
+        "featured": true,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "No usage limit. Some features restricted."
+    },
+    {
+        "name": "uMap Airport Wifi",
+        "link": "https://umap.openstreetmap.fr/en/map/wireless-passwords-from-airports-and-lounges-aroun_107272#2/24.5/0.5",
+        "description": "An map of WiFi passwords for airports across the world.",
+        "logo": "logos/umap.png",
+        "category": "travel",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Symbolab",
+        "link": "https://www.symbolab.com/",
+        "description": "Online algebra and calculus calculator.",
+        "logo": "logos/symbolab.png",
+        "category": "math, study",
+        "featured": true,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "No usage limit. Some solution steps hidden in free tier."
+    },
+    {
+        "name": "PTable",
+        "link": "https://ptable.com/",
+        "description": "A detailed, interactive periodic table.",
+        "logo": "logos/ptable.png",
+        "category": "study",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Desmos",
+        "link": "https://www.desmos.com/calculator",
+        "description": "Online graphing calculator.",
+        "logo": "logos/desmos.png",
+        "category": "math, study",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Data Breach",
+        "link": "https://databreach.com/",
+        "description": "Check if your data has been leaked.",
+        "logo": "logos/databreach.png",
+        "category": "lock",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "PNGtoJPG",
+        "link": "https://png2jpg.com/",
+        "description": "Online file converter for a variety of formats.",
+        "logo": "logos/png2jpg.png",
+        "category": "convert",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Virus Total",
+        "link": "https://www.virustotal.com/gui/home/upload",
+        "description": "Analyze suspicious files and URLs",
+        "logo": "logos/virustotal.png",
+        "category": "lock",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Remove Bg",
+        "link": "https://www.remove.bg/",
+        "description": "Background removal tool and image editor.",
+        "logo": "logos/removebg.png",
+        "category": "design",
+        "featured": false,
+        "use": "Free and no account required. Optional premium upgrades.",
+        "limits": "No usage limit. Some features and quality settings restricted."
+    },
+    {
+        "name": "Omni Calculator",
+        "link": "https://www.omnicalculator.com/",
+        "description": "Over 3500 useful online calculators.",
+        "logo": "logos/omnicalculator.png",
+        "category": "math, study",
+        "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    }
 ]
