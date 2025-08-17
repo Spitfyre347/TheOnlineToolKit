@@ -1,90 +1,112 @@
 [
-    {
-        "name": "iLovePDF",
-        "link": "https://www.ilovepdf.com/",
-        "description": "A suite of dozens of free PDF tools.",
-        "logo": "logos/ilovepdf.png",
-        "category": "doc",
-        "featured": true
-    },
-    {
-        "name": "PDF Candy",
-        "link": "https://pdfcandy.com/",
-        "description": "90+ Free Online PDF tools.",
-        "logo": "logos/pdfcandy.png",
-        "category": "doc",
-        "featured": false
-    },
-    {
-        "name": "CloudConvert",
-        "link": "https://cloudconvert.com/",
-        "description": "Convert between 200+ file formats.",
-        "logo": "logos/cloudconvert.png",
-        "category": "convert",
-        "featured": true
-    },
-    {
-        "name": "Capitol Trades",
-        "link": "https://www.capitoltrades.com/",
-        "description": "See all trades made by US senators.",
-        "logo": "logos/capitoltrades.png",
-        "category": "business",
-        "featured": true
-    },
-    {
-        "name": "FreeLearningList",
-        "link": "https://freelearninglist.org/",
-        "description": "A ranked list of the best free educational resources.",
-        "logo": "logos/freelearninglist.png",
-        "category": "study",
-        "featured": false
-    },
-    {
-        "name": "FlowCV",
-        "link": "https://flowcv.com/",
-        "description": "Create a free professional resume online.",
-        "logo": "logos/flowcv.png",
-        "category": "business",
-        "featured": false
-    },
-    {
-        "name": "QuillBot",
-        "link": "https://quillbot.com/",
-        "description": "Online text tools to paraphrase, check or summarize.",
-        "logo": "logos/quillbot.png",
-        "category": "write",
-        "featured": false
-    },
-    {
-        "name": "Atlas Obscura",
-        "link": "https://www.atlasobscura.com/",
-        "description": "A guide to hidden travel gems.",
-        "logo": "logos/atlasobscura.png",
-        "category": "travel",
-        "featured": true
-    },
-    {
-        "name": "TinyWOW",
-        "link": "https://tinywow.com/",
-        "description": "A collection of 272 useful online tools.",
-        "logo": "logos/tinywow.png",
-        "category": "doc",
-        "featured": true
-    },
-    {
-        "name": "Ostagram",
-        "link": "https://www.ostagram.me/",
-        "description": "AI tool to create stylized images.",
-        "logo": "logos/ostagram.png",
-        "category": "design",
-        "featured": false
-    },
-    {
-        "name": "LearnAnything",
-        "link": "https://learn-anything.xyz/",
-        "description": "Educational resources for hundreds of topics.",
-        "logo": "logos/learnanything.png",
-        "category": "code, math, writing",
-        "featured": false
-    }
+  {
+    "name": "iLovePDF",
+    "link": "https://www.ilovepdf.com/",
+    "description": "A suite of dozens of free PDF tools.",
+    "logo": "logos/ilovepdf.png",
+    "category": "doc",
+    "featured": true,
+    "use": "Free and no account required. Optional premium upgrades.",
+    "limits": "No usage limit. Some restrictions on file size."
+  },
+  {
+    "name": "PDF Candy",
+    "link": "https://pdfcandy.com/",
+    "description": "90+ Free Online PDF tools.",
+    "logo": "logos/pdfcandy.png",
+    "category": "doc",
+    "featured": true,
+    "use": "Free, but account required. Optional premium upgrades.",
+    "limits": "Hourly limit for free tier file processing."
+  },
+  {
+    "name": "CloudConvert",
+    "link": "https://cloudconvert.com/",
+    "description": "Convert between 200+ file formats.",
+    "logo": "logos/cloudconvert.png",
+    "category": "convert",
+    "featured": true,
+    "use": "Free and no account required. Optional premium upgrades.",
+    "limits": "Up to 10 conversions per day. More requires purchase."
+  },
+  {
+    "name": "Capitol Trades",
+    "link": "https://www.capitoltrades.com/",
+    "description": "See all trades made by US senators.",
+    "logo": "logos/capitoltrades.png",
+    "category": "business",
+    "featured": true,
+    "use": "Completely free to use, no account required.",
+    "limits": "No usage limit or restrictions."
+  },
+  {
+    "name": "FreeLearningList",
+    "link": "https://freelearninglist.org/",
+    "description": "A ranked list of the best free educational resources.",
+    "logo": "logos/freelearninglist.png",
+    "category": "study",
+    "featured": true,
+    "use": "Completely free to use, no account required.",
+    "limits": "No usage limit or restrictions."
+  },
+  {
+    "name": "FlowCV",
+    "link": "https://flowcv.com/",
+    "description": "Create a free professional resume online.",
+    "logo": "logos/flowcv.png",
+    "category": "business",
+    "featured": true,
+    "use": "Free, but account required. Optional premium upgrades.",
+    "limits": "First resume free, thereafter payment required."
+  },
+  {
+    "name": "QuillBot",
+    "link": "https://quillbot.com/",
+    "description": "Online text tools to paraphrase, check or summarize.",
+    "logo": "logos/quillbot.png",
+    "category": "write",
+    "featured": true,
+    "use": "Free and no account required. Optional premium upgrades.",
+    "limits": "No usage limit. Some features restricted."
+  },
+  {
+    "name": "Atlas Obscura",
+    "link": "https://www.atlasobscura.com/",
+    "description": "A guide to hidden travel gems.",
+    "logo": "logos/atlasobscura.png",
+    "category": "travel",
+    "featured": true,
+    "use": "Completely free to use, no account required.",
+    "limits": "No usage limit or restrictions."
+  },
+  {
+    "name": "TinyWOW",
+    "link": "https://tinywow.com/",
+    "description": "A collection of 272 useful online tools.",
+    "logo": "logos/tinywow.png",
+    "category": "doc",
+    "featured": true,
+    "use": "Completely free to use, no account required.",
+    "limits": "No usage limit or restrictions."
+  },
+  {
+    "name": "Ostagram",
+    "link": "https://www.ostagram.me/",
+    "description": "AI tool to create stylized images.",
+    "logo": "logos/ostagram.png",
+    "category": "design",
+    "featured": true,
+    "use": "Free to use, but account required.",
+    "limits": "No reported usage limit or restrictions."
+  },
+  {
+    "name": "LearnAnything",
+    "link": "https://learn-anything.xyz/",
+    "description": "Educational resources for hundreds of topics.",
+    "logo": "logos/learnanything.png",
+    "category": "code, math, writing",
+    "featured": true,
+    "use": "Completely free to use, no account required.",
+    "limits": "No usage limit or restrictions."
+  }
 ]

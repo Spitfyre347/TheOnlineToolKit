@@ -213,7 +213,7 @@
   <div class="main" id="main-content" style="text-align:center;">
     <!-- Home Page -->
     <div id="home" class="category">
-      <h1 style="margin-top: 60px;">The Online Tool Kit 🧰</h1>
+      <h1 style="margin-top: 60px; font-size: 50px;">The Online Tool Kit 🧰</h1>
       <p style="margin-bottom: 50px;"> Your hub for free online tools! </p>
       <div class="search-box", style="margin-bottom: 70px;">
         <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
@@ -229,6 +229,17 @@
       <h2>Search Results 🔍</h2>
       <div class="tools-grid" id="search-results-grid"></div>
     </div>
+
+    <!-- Google AdSense Ad Slot -->
+    <ins class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-client="ca-pub-XXXXXXXXXXXX"
+        data-ad-slot="YYYYYYYYYY"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
 
     <!-- PDF Tools -->
@@ -319,18 +330,27 @@
       })
       .catch(err => console.error('Error loading tools:', err));
 
+
+    function createToolCard(tool) {
+      const card = document.createElement('div');
+      card.innerHTML = `
+        <img src="${tool.logo}" alt="${tool.name}" style="width:80px;height:80px;">
+        <a href="${tool.link}" target="_blank">${tool.name}</a>
+        <p>${tool.description}</p>
+        <hr style="width:80%; margin:15px auto;">
+        <p style="font-size:12px;"><strong>Pricing:</strong> ${tool.use}</p>
+        <p style="font-size:12px;"><strong>Limits:</strong> ${tool.limits}</p>
+      `;
+      return card;
+    }
+
     // Render featured tools
     function renderFeatured() {
       const container = document.getElementById('featured-tools');
       container.innerHTML = '';
       allTools.filter(t => t.featured).forEach(tool => {
-        const card = document.createElement('div');
+        const card = createToolCard(tool);
         card.className = 'tool-card';
-        card.innerHTML = `
-          <img src="${tool.logo}" alt="${tool.name}" style="width:80px;height:80px;">
-          <a href="${tool.link}" target="_blank">${tool.name}</a>
-          <p>${tool.description}</p>
-        `;
         container.appendChild(card);
       });
     }
@@ -355,13 +375,8 @@
           }
 
           // Create the card for this tool
-          const card = document.createElement('div');
+          const card = createToolCard(tool);
           card.className = 'tool-card';
-          card.innerHTML = `
-            <img src="${tool.logo}" style="width:80px;height:80px;">
-            <a href="${tool.link}" target="_blank">${tool.name}</a>
-            <p>${tool.description}</p>
-          `;
           grid.appendChild(card);
         });
       });
@@ -416,13 +431,8 @@
       );
 
       matches.forEach(tool => {
-        const card = document.createElement('div');
+        const card = createToolCard(tool);
         card.className = 'tool-card show';
-        card.innerHTML = `
-          <img src="${tool.logo}" style="width:80px;height:80px;">
-          <a href="${tool.link}" target="_blank">${tool.name}</a>
-          <p>${tool.description}</p>
-        `;
         searchResultsGrid.appendChild(card);
       });
 
@@ -460,5 +470,11 @@
       document.body.classList.toggle("sidebar-open");
     }
     </script>
+
+
+  <footer style="text-align:center; padding:20px; font-size:14px; color:#777; border-top:1px solid #ddd; margin-top:50px;">
+    <p>All logos and trademarks belong to their respective owners. This site is not affiliated with or endorsed by the listed services.</p>
+  </footer>
+
 </body>
 </html>
