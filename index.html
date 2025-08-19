@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Online Tool Kit</title>
 
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
   <style>    
 
     :root {
-      --main-font: 'Verdana', sans-serif;
+      --main-font: 'Cabin', sans-serif;
     }
 
     body, h1, h2, h3, h4, h5, h6, p {
@@ -185,9 +195,25 @@
       padding-right: var(--scrollbar-width);
     }
 
-  </style>
+    .poller-one-regular {
+      font-family: "Poller One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    
+    .cabin-font {
+      font-family: "Cabin", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-variation-settings:
+        "wdth" 100;
+    }
+
+
+  </style>
 
 </head>
 <body>
@@ -216,33 +242,16 @@
   <div class="main" id="main-content" style="text-align:center;">
     <!-- Home Page -->
     <div id="home" class="category">
-      <h1 style="margin-top: 60px; font-size: 50px;">The Online Tool Kit 🧰</h1>
-      <p style="margin-bottom: 50px;"> Your hub for free online tools! </p>
+      <h1 class="poller-one-regular" style="padding-top: 50px; margin-top: 60px; font-size: 50px;">The Online Tool Kit 🧰</h1>
+      <p style="margin-bottom: 50px; font-size: 25px"> Your hub for free online tools! </p>
       <div class="search-box" style="margin-bottom: 70px;">
         <input type="text" placeholder="Search for a tool..." id="searchBar" onkeyup="searchTools()">
       </div>
-
-       <!-- Google AdSense test ad -->
-      <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-3940256099942544"
-          data-ad-slot="3145844922"
-          data-ad-format="auto"></ins>
-
-      
-      <!-- Push the ad -->
-      <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
-
       <div id="featured-section">
         <h2 style="margin-top: 50px;">Featured Tools</h2>
         <div class="tools-grid" id="featured-tools"></div>
       </div>
     </div>
-
-    
 
     <!-- Add a container for search results just below the search box -->
     <div class="search-results" id="search-results" style="display:none; text-align:center;">
@@ -252,77 +261,112 @@
 
     <!-- PDF Tools -->
     <div id="doc" class="category" style="display:none; text-align:center;">
-      <h1>Document Editors and PDF Tools 📄</h1>
-      <p style="margin-bottom: 30px;"> Edit document files entirely online without downloading any software!
+      <h1 style="margin-top: 50px;">Document Editors and PDF Tools 📄</h1>
+      <p style="margin-bottom: 40px;"> Edit document files entirely online without downloading any software!
       </p>
     </div>
 
     <!-- Business Tools -->
     <div id="business" class="category" style="display:none; text-align:center;">
-      <h1>Business and Trading Tools 💼</h1>
-      <p style="margin-bottom: 30px;"> Search trading databases and find tools made for businesses and financiers!
+      <h1 style="margin-top: 50px;">Business and Trading Tools 💼</h1>
+      <p style="margin-bottom: 40px;"> Search trading databases and find tools made for businesses and financiers!
       </p>
     </div>
 
     <!-- File Converters -->
     <div id="convert" class="category" style="display:none; text-align:center;">
-      <h1>File Converters 🔄</h1>
-      <p style="margin-bottom: 30px;">Convert files between formats quickly and securely without installing software.</p>
+      <h1 style="margin-top: 50px;">File Converters 🔄</h1>
+      <p style="margin-bottom: 40px;">Convert files between formats quickly and securely without installing software.</p>
     </div>
 
     <!-- Design Software -->
     <div id="design" class="category" style="display:none; text-align:center;">
-      <h1>Design Software 🎨</h1>
-      <p style="margin-bottom: 30px;">Create graphics, mockups, and designs online with powerful design tools.</p>
+      <h1 style="margin-top: 50px;">Design Software 🎨</h1>
+      <p style="margin-bottom: 40px;">Create graphics, mockups, and designs online with powerful design tools.</p>
     </div>
 
     <!-- Studying Tools -->
     <div id="study" class="category" style="display:none; text-align:center;">
-      <h1>Studying Tools 📚</h1>
-      <p style="margin-bottom: 30px;">Boost your learning with online study aids, flashcards, and resources.</p>
+      <h1 style="margin-top: 50px;">Studying Tools 📚</h1>
+      <p style="margin-bottom: 40px;">Boost your learning with online study aids, flashcards, and resources.</p>
     </div>
 
     <!-- Price Comparisons -->
     <div id="price" class="category" style="display:none; text-align:center;">
-      <h1>Price Comparison Tools 💰</h1>
-      <p style="margin-bottom: 30px;">Find the best deals online with tools that compare prices across websites.</p>
+      <h1 style="margin-top: 50px;">Price Comparison Tools 💰</h1>
+      <p style="margin-bottom: 40px;">Find the best deals online with tools that compare prices across websites.</p>
     </div>
 
     <!-- Mathematics Tools -->
     <div id="math" class="category" style="display:none; text-align:center;">
-      <h1>Mathematics Tools 🧮</h1>
-      <p style="margin-bottom: 30px;">Solve equations, graph functions, and explore mathematical concepts online.</p>
+      <h1 style="margin-top: 50px;">Mathematics Tools 🧮</h1>
+      <p style="margin-bottom: 40px;">Solve equations, graph functions, and explore mathematical concepts online.</p>
     </div>
 
     <!-- Writing Tools -->
     <div id="write" class="category" style="display:none; text-align:center;">
-      <h1>Writing Tools ✒️</h1>
-      <p style="margin-bottom: 30px;">Improve your writing, grammar, and creativity with online writing assistants.</p>
+      <h1 style="margin-top: 50px;">Writing Tools ✒️</h1>
+      <p style="margin-bottom: 40px;">Improve your writing, grammar, and creativity with online writing assistants.</p>
     </div>
 
     <!-- Development Tools -->
     <div id="code" class="category" style="display:none; text-align:center;">
-      <h1>Development Tools 🖥️</h1>
-      <p style="margin-bottom: 30px;">Access online coding editors, compilers, and developer utilities.</p>
+      <h1 style="margin-top: 50px;">Development Tools 🖥️</h1>
+      <p style="margin-bottom: 40px;">Access online coding editors, compilers, and developer utilities.</p>
     </div>
 
     <!-- Travel Tools -->
     <div id="travel" class="category" style="display:none; text-align:center;">
-      <h1>Travel Tools ✈️</h1>
-      <p style="margin-bottom: 30px;">Plan trips, check flights, and organize your travel online with ease.</p>
+      <h1 style="margin-top: 50px;">Travel Tools ✈️</h1>
+      <p style="margin-bottom: 40px;">Plan trips, check flights, and organize your travel online with ease.</p>
     </div>
 
     <!-- Mail Tools -->
     <div id="mail" class="category" style="display:none; text-align:center;">
-      <h1>Mail Tools 📧</h1>
-      <p style="margin-bottom: 30px;">Manage email accounts, track messages, and improve productivity online.</p>
+      <h1 style="margin-top: 50px;">Mail Tools 📧</h1>
+      <p style="margin-bottom: 40px;">Manage email accounts, track messages, and improve productivity online.</p>
     </div>
 
     <!-- Online Safety Tools -->
     <div id="lock" class="category" style="display:none; text-align:center;">
-      <h1>Online Safety Tools 🔐</h1>
-      <p style="margin-bottom: 30px;">Protect your data and browse safely with online security tools.</p>
+      <h1 style="margin-top: 50px;">Online Safety Tools 🔐</h1>
+      <p style="margin-bottom: 40px;">Protect your data and browse safely with online security tools.</p>
     </div>
+
+
+    <!-- Ad placeholder 
+    <div style="
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:728px;  /* typical leaderboard ad width */
+      height:90px;      /* typical ad height */
+      border:2px dashed #aaa;
+      border-radius:6px;
+      margin:20px auto;
+      background:#f9f9f9;
+      color:#555;
+      font-size:20px;
+      font-weight:bold;
+      margin-top: 50px;
+    ">
+      AD
+    </div> -->
+
+
+    <!-- Google AdSense test ad -->
+    <!--<ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-3940256099942544"
+        data-ad-slot="3145844922"
+        data-ad-format="auto"></ins>-->
+
+      
+    <!-- Push the ad -->
+    <!--<script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>-->
   
   <script>
     let allTools = [];
