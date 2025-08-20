@@ -1,2 +1,19 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3457303641561581"
-     crossorigin="anonymous"></script>
+    <!-- Ad placeholder 
+    <div style="
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:728px;  /* typical leaderboard ad width */
+      height:90px;      /* typical ad height */
+      border:2px dashed #aaa;
+      border-radius:6px;
+      margin:20px auto;
+      background:#f9f9f9;
+      color:#555;
+      font-size:20px;
+      font-weight:bold;
+      margin-top: 50px;
+    ">
+      AD
+    </div> -->
