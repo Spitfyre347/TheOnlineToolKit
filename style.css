@@ -1,0 +1,224 @@
+:root {
+    --main-font: 'Cabin', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: var(--main-font);
+}
+
+body {
+    margin: 0;
+}
+h1 {
+    font-size: 45px;
+    color: #151d25;
+}
+h2 {
+    font-size: 30px;
+    color: #151d25;
+}
+p {
+    color: #6e7881;
+    font-size: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+.sidebar ul li {
+    padding: 12px 20px;
+    cursor: pointer;
+}
+.sidebar ul li:hover {
+    background-color: #34495e;
+}
+
+.main {
+    margin: 0 auto;/* keeps content centered */
+    max-width: 1200px;
+    padding-left: 30px;
+}
+
+.search-box {
+    text-align: center;
+    margin: 40px 0;
+}
+.search-box input {
+    width: 60%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #2c3e50;
+    border-radius: 8px;
+}
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers both image and text */
+    border: 1px solid #ddd;
+    padding: 30px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: center;
+    background: #f9f9f9;
+    transition: transform 0.2s;
+}
+.tool-card:hover {
+    transform: scale(1.05);
+    background: #eef;
+}
+.tool-card a {
+    display: block;  /* makes it appear below the image */
+    margin-top: 10px; /* optional spacing */
+    text-decoration: none;
+    color: #105ef0;
+    font-weight: bold;
+    font-size: 25px; /* change the size here */
+}
+.tool-card p {
+    font-size: 17px; /* change the size here */
+}
+.tool-card img {
+    margin-top: 8px; /* adjust as needed */
+}
+.search-mode .tools-grid .tool-card {
+    opacity: 0.3;          /* dim all tool cards */
+    transition: opacity 0.3s;
+}
+
+.search-mode .tools-grid .tool-card.show {
+    opacity: 1;            /* highlight matching cards */
+}
+
+#featured-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+    gap: 20px;
+    justify-content: center; /* centers the grid */
+}
+
+#search-results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+    gap: 20px;
+    justify-content: center; /* centers the grid */
+}
+
+#category-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
+    gap: 20px;
+    justify-content: center; /* centers the grid */
+}
+
+
+/* Sidebar base style */
+.sidebar {
+    width: 250px;
+    background: #222;
+    color: #fff;
+    height: auto;
+    position: fixed;
+    z-index: 999;      /* add this so it sits on top */
+    justify-content: space-between; /* pushes bottom section down */
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    opacity: 0.95;
+    max-height: 90vh; /* full height */
+    padding-top: 50px;
+    padding-bottom: 20px;
+    transform: translateX(-100%);
+}
+/* Desktop */
+@media(min-width: 768px) {
+    .sidebar {
+    max-height: none;
+    height: 100vh;
+    }
+
+    #category-tools {
+    justify-content: left;
+    }
+}
+
+/* bottom section in sidebar */
+.sidebar-bottom {
+    padding: 40px 0 50px 0;
+}
+
+.sidebar-sep {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.5); /* white line */
+    margin: 10px 0;
+}
+
+
+
+/* Hamburger button */
+.menu-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #333333;
+    color: #fff;
+    opacity: 0.95;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    transform: translateX(0); /* slides it back in */
+}
+
+/* When sidebar is open, prevent background scrolling */
+body.sidebar-open {
+    overflow: hidden;
+    padding-right: var(--scrollbar-width);
+}
+
+.poller-one-regular {
+    font-family: "Poller One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.cabin-font {
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #252525;;  
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.button-link:hover {
+  background-color: #2b2b2b;;   /* slightly darker on hover */
+  transform: translateY(-2px); /* subtle lift */
+}

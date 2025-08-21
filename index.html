@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Online Tool Kit</title>
 
+  <link rel="stylesheet" href="../style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poller+One&display=swap" rel="stylesheet">
@@ -14,203 +16,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
   <style>    
-
-    :root {
-      --main-font: 'Cabin', sans-serif;
-    }
-
-    body, h1, h2, h3, h4, h5, h6, p {
-      font-family: var(--main-font);
-    }
-
-    body {
-      margin: 0;
-    }
-    h1 {
-      font-size: 45px;
-      color: #151d25;
-    }
-    h2 {
-      font-size: 30px;
-      color: #151d25;
-    }
-    p {
-      color: #6e7881;
-      font-size: 20px;
-    }
-
-    .sidebar h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .sidebar ul li {
-      padding: 12px 20px;
-      cursor: pointer;
-    }
-    .sidebar ul li:hover {
-      background-color: #34495e;
-    }
-
-    .main {
-      margin: 0 auto;/* keeps content centered */
-      max-width: 1200px;
-      padding-left: 30px;
-    }
-
-    .search-box {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .search-box input {
-      width: 60%;
-      padding: 15px;
-      font-size: 16px;
-      border: 2px solid #2c3e50;
-      border-radius: 8px;
-    }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
-    .tool-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* centers both image and text */
-      border: 1px solid #ddd;
-      padding: 30px;
-      width: 200px;
-      border-radius: 10px;
-      text-align: center;
-      background: #f9f9f9;
-      transition: transform 0.2s;
-    }
-    .tool-card:hover {
-      transform: scale(1.05);
-      background: #eef;
-    }
-    .tool-card a {
-      display: block;  /* makes it appear below the image */
-      margin-top: 10px; /* optional spacing */
-      text-decoration: none;
-      color: #105ef0;
-      font-weight: bold;
-      font-size: 25px; /* change the size here */
-    }
-    .tool-card p {
-      font-size: 17px; /* change the size here */
-    }
-    .tool-card img {
-      margin-top: 8px; /* adjust as needed */
-    }
-    .search-mode .tools-grid .tool-card {
-      opacity: 0.3;          /* dim all tool cards */
-      transition: opacity 0.3s;
-    }
-
-    .search-mode .tools-grid .tool-card.show {
-      opacity: 1;            /* highlight matching cards */
-    }
-
-    #featured-tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
-      gap: 20px;
-      justify-content: center; /* centers the grid */
-    }
-
-    #search-results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
-      gap: 20px;
-      justify-content: center; /* centers the grid */
-    }
-
-    #category-tools {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 250px)); /* fixed width for cards */
-      gap: 20px;
-      justify-content: center; /* centers the grid */
-    }
-
-
-    /* Sidebar base style */
-    .sidebar {
-      width: 250px;
-      background: #222;
-      color: #fff;
-      height: auto;
-      position: fixed;
-      z-index: 999;      /* add this so it sits on top */
-      top: 0;
-      left: 0;
-      overflow-y: auto;
-      opacity: 0.95;
-      max-height: 90vh; /* full height */
-      padding-top: 50px;
-      padding-bottom: 20px;
-      transform: translateX(-100%);
-    }
-    /* Desktop */
-    @media(min-width: 768px) {
-      .sidebar {
-        max-height: none;
-        height: 100vh;
-      }
-
-      #category-tools {
-        justify-content: left;
-      }
-    }
-
-
-    /* Hamburger button */
-    .menu-toggle {
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      background: #333333;
-      color: #fff;
-      opacity: 0.95;
-      border: none;
-      padding: 10px 15px;
-      font-size: 20px;
-      border-radius: 5px;
-      z-index: 1000;
-    }
-
-    .sidebar.active {
-      transform: translateX(0); /* slides it back in */
-    }
-
-   /* When sidebar is open, prevent background scrolling */
-    body.sidebar-open {
-      overflow: hidden;
-      padding-right: var(--scrollbar-width);
-    }
-
-    .poller-one-regular {
-      font-family: "Poller One", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-
-    
-    .cabin-font {
-      font-family: "Cabin", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 500;
-      font-style: normal;
-      font-variation-settings:
-        "wdth" 100;
-    }
-
-
   </style>
 
 </head>
@@ -237,6 +42,13 @@
       <li onclick="showCategory('lock')">🔐 Online Safety Tools</li>
       
     </ul>
+    <div class="sidebar-bottom">
+      <hr class="sidebar-sep">
+      <ul>
+        <li onclick="showCategory('blog')">📝 Blog</li>
+        <li onclick="showCategory('contact')">✉️ Contact</li>
+      </ul>
+    </div>
   </div>
 
   <div class="main" id="main-content" style="text-align:center;">
@@ -338,6 +150,37 @@
       <h1 style="margin-top: 50px;">Online Safety Tools 🔐</h1>
       <p style="margin-bottom: 40px;">Protect your data and browse safely with online security tools.</p>
     </div>
+
+    <!-- Blog -->
+    <div id="blog" class="category" style="display:none; text-align:center;">
+      <h1 style="margin-top: 50px;">Blog 📝</h1>
+      <p style="margin-bottom: 40px;">Updates, tips, and tutorials for using our website.</p>
+      <div id="blog-index" style="max-width:800px; margin:0 auto; text-align:left;"></div>
+      <div id="blog-post-container" style="max-width:800px; margin:20px auto; text-align:left;"></div>
+    </div>
+
+
+
+
+    <!-- Contact -->
+    <div id="contact" class="category" style="display:none; text-align:center;">
+      <h1 style="margin-top: 50px;">Contact ✉️</h1>
+      <p style="margin-bottom: 40px;">Have any feedback? Get in touch with us.</p>
+
+      <form action="https://formspree.io/f/xpwlvwra" method="POST" style="max-width:500px; margin:0 auto; text-align:left;">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:5px;"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:5px;"><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:5px;"></textarea><br>
+
+        <button type="submit" style="background:#105ef0; color:white; padding:12px 20px; border:none; border-radius:5px; cursor:pointer;">Send</button>
+      </form>
+    </div>
+
 
     
     <div style="height: 30px;"></div>
@@ -444,14 +287,17 @@
       if (category === 'home') {
         document.getElementById('featured-section').style.display = 'block';
       }
-
-      // ✅ Auto-close sidebar on mobile
+      
+      // Load blog posts only when "blog" is clicked
+      if (category === 'blog') {
+        loadBlogPosts();
+      }
+      
+      // Auto-close sidebar on mobile
       if (window.innerWidth < 768) {
         toggleSidebar(true);
       }
     }
-
-
 
     function searchTools() {
       const input = document.getElementById('searchBar').value.toLowerCase();
@@ -509,36 +355,68 @@
 
     }
 
+    async function loadBlogPosts() {
+      const indexContainer = document.getElementById("blog-index");
+      indexContainer.innerHTML = "<p>Loading posts...</p>";
+
+      try {
+        const res = await fetch("posts.json");
+        const posts = await res.json();
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        indexContainer.innerHTML = posts.map(post =>
+          `<p><a href="blogposts/${post.file}">${post.title} <em>(${new Date(post.date).toDateString()})</em></a></p>`
+        ).join("");
+
+      } catch (err) {
+        console.error("Error loading blog posts:", err);
+        indexContainer.innerHTML = "<p>Failed to load blog posts.</p>";
+      }
+    }
+
+
+    function toggleSidebar(forceClose = false) {
+          const body = document.body;
+          const sidebar = document.querySelector(".sidebar");
+          const isMobile = window.innerWidth < 768;
+
+          if (forceClose) {
+            sidebar.classList.remove("active");
+            body.style.overflow = '';
+            body.style.paddingRight = '';
+            return;
+          }
+
+          sidebar.classList.toggle("active");
+
+          if (sidebar.classList.contains("active") && isMobile) {
+            // mobile: prevent background scrolling
+            const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+            body.style.paddingRight = scrollBarWidth + 'px';
+            body.style.overflow = 'hidden';
+          } else {
+            // desktop: don’t mess with scroll
+            body.style.paddingRight = '';
+            body.style.overflow = '';
+          }
+        }
+
     // Initialize
     renderFeatured();
     renderAllCategories();
 
-
-    function toggleSidebar(forceClose = false) {
-      const body = document.body;
-      const sidebar = document.querySelector(".sidebar");
-      const isMobile = window.innerWidth < 768;
-
-      if (forceClose) {
-        sidebar.classList.remove("active");
-        body.style.overflow = '';
-        body.style.paddingRight = '';
-        return;
-      }
-
-      sidebar.classList.toggle("active");
-
-      if (sidebar.classList.contains("active") && isMobile) {
-        // mobile: prevent background scrolling
-        const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-        body.style.paddingRight = scrollBarWidth + 'px';
-        body.style.overflow = 'hidden';
+    window.addEventListener("popstate", async (e) => {
+      const postContainer = document.getElementById("blog-post-container");
+      const hash = location.hash;
+      if (hash.startsWith("#blog/")) {
+        const file = hash.replace("#blog/", "");
+        const html = await fetch(`blogposts/${file}`).then(r => r.text());
+        postContainer.innerHTML = html;
       } else {
-        // desktop: don’t mess with scroll
-        body.style.paddingRight = '';
-        body.style.overflow = '';
+        postContainer.innerHTML = ""; // no post
       }
-    }
+    });
+
     </script>
 
 
