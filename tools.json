@@ -44,7 +44,7 @@
         "link": "https://freelearninglist.org/",
         "description": "A ranked list of the best free educational resources.",
         "logo": "logos/freelearninglist.png",
-        "category": "study, math, write, code",
+        "category": "study, math, write, code, science",
         "featured": false,
         "use": "Completely free to use, no account required.",
         "limits": "No usage limit or restrictions."
@@ -75,7 +75,7 @@
         "description": "A guide to hidden travel gems.",
         "logo": "logos/atlasobscura.png",
         "category": "travel",
-        "featured": true,
+        "featured": false,
         "use": "Completely free to use, no account required.",
         "limits": "No usage limit or restrictions."
     },
@@ -104,7 +104,7 @@
         "link": "https://learn-anything.xyz/",
         "description": "Educational resources for hundreds of topics.",
         "logo": "logos/learnanything.png",
-        "category": "code, math, write, study",
+        "category": "code, math, write, study, science",
         "featured": true,
         "use": "Completely free to use, no account required.",
         "limits": "No usage limit or restrictions."
@@ -174,7 +174,7 @@
         "link": "https://ptable.com/",
         "description": "A detailed, interactive periodic table.",
         "logo": "logos/ptable.png",
-        "category": "study",
+        "category": "study, science",
         "featured": false,
         "use": "Completely free to use, no account required.",
         "limits": "No usage limit or restrictions."
@@ -234,8 +234,18 @@
         "link": "https://www.omnicalculator.com/",
         "description": "Over 3500 useful online calculators.",
         "logo": "logos/omnicalculator.png",
-        "category": "math, study",
+        "category": "math, study, science",
         "featured": false,
+        "use": "Completely free to use, no account required.",
+        "limits": "No usage limit or restrictions."
+    },
+    {
+        "name": "Fisher Structure Search",
+        "link": "https://www.fishersci.com/us/en/search/chemical/substructure.html",
+        "description": "Draw chemical structures, find IUPAC names and search data.",
+        "logo": "logos/fisherscientific.png",
+        "category": "study, science",
+        "featured": true,
         "use": "Completely free to use, no account required.",
         "limits": "No usage limit or restrictions."
     }
