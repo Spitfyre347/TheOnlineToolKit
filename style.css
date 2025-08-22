@@ -211,7 +211,8 @@ body.sidebar-open {
   padding: 10px 20px;
   background-color: #252525;;  
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
+  font-size: 17px;
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.2s, transform 0.2s;
@@ -235,3 +236,22 @@ body.sidebar-open {
 .blog-page h2{
     color: #3f3f3f;
 }
+
+
+.tool-section {
+  display: flex;
+  gap: 20px;
+}
+
+.tool-section .tool-image {
+  flex: 1;
+  min-height: auto;
+  display: flex;              /* turn it into a flexbox */
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+}
+
+.tool-section .tool-body {
+  flex: 2;
+}
+
